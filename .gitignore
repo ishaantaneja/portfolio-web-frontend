@@ -22,3 +22,36 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# dependencies
+/node_modules
+
+# production build
+/build
+/dist
+/out
+
+# misc
+.DS_Store
+Thumbs.db
+*.log
+
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# testing
+/coverage
+*.lcov
+
+# editor settings
+.vscode/
+.idea/
+
+# cache
+.cache/
+.next/
