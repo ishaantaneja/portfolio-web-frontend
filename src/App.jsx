@@ -9,10 +9,12 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Skills from './pages/Skills'
 
+
 export default function App() {
   return (
     <>
       <Nav />
+      
       <main style={{ padding: 20 }}>
         <Routes>
           <Route path="/" element={<Home />} />
