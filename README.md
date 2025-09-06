@@ -1,12 +1,38 @@
-# React + Vite
+# Portfolio Website (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive **Portfolio Website** built with **ReactJS** integrated with a **CMS** for dynamic content management. This frontend provides the user interface for showcasing projects, blogs, skills, and personal achievements.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fully responsive UI with **HTML5, CSS3, and ReactJS**
+- Dynamic project showcases and blog sections
+- Interactive contact form with validation
+- Theme customization for personalized portfolio appearance
+- Seamless integration with backend APIs for real-time content updates
+- Compatible across major browsers and devices
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** ReactJS, JavaScript (ES6+), HTML5, CSS3
+- **State Management:** React Context / Redux (optional)
+- **Forms:** React Hook Form / Formik
+- **Styling:** CSS Modules / Styled Components / TailwindCSS
+
+
+Usage
+
+View and interact with projects and blog posts dynamically.
+
+Contact form sends inquiries directly to the backend email service.
+
+Theme customization allows real-time style changes.
+
+Contribution
+
+Fork the repo, create a branch, and submit a pull request.
+
+Ensure code is clean, responsive, and well-documented.
+
+
+Author
+Ishaan Taneja - Full Stack Web Developer | Cybersecurity-focussed 
