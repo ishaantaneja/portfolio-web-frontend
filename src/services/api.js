@@ -14,3 +14,6 @@ export const fetchPosts = () => axios.get(`${API_BASE}/posts`);
 // Contact form
 export const sendMessage = (data) => axios.post(`${API_BASE}/contact`, data);
 
+// Theme
+export const getTheme = () => axios.get(`${API_BASE}/settings`);
+export const updateTheme = (darkMode) => axios.put(`${API_BASE}/settings`, { darkMode });

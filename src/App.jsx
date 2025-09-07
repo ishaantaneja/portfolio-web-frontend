@@ -8,13 +8,14 @@ import Projects from './pages/Projects'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Skills from './pages/Skills'
+import ThemeToggle from './components/ThemeToggle'
 
 
 export default function App() {
   return (
     <>
       <Nav />
-      
+      <ThemeToggle />
       <main style={{ padding: 20 }}>
         <Routes>
           <Route path="/" element={<Home />} />
