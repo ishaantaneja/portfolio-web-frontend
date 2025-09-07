@@ -34,3 +34,9 @@ const authHeaders = () => ({
 // Skills with token
 export const addSkill = (data) => axios.post(`${API_BASE}/skills`, data, authHeaders());
 export const deleteSkill = (id) => axios.delete(`${API_BASE}/skills/${id}`, authHeaders());
+
+// Projects CMS actions
+export const addProject = (data) => axios.post(`${API_BASE}/projects`, data, authHeaders());
+export const updateProject = (id, data) => axios.put(`${API_BASE}/projects/${id}`, data, authHeaders());
+export const deleteProject = (id) => axios.delete(`${API_BASE}/projects/${id}`, authHeaders());
+
