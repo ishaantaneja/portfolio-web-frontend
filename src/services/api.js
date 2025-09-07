@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_BASE = "http://localhost:5000/api"; // backend running locally
 
-// Projects
+// Projects - only fetching is public
 export const fetchProjects = () => axios.get(`${API_BASE}/projects`);
 
 
@@ -39,4 +39,11 @@ export const deleteSkill = (id) => axios.delete(`${API_BASE}/skills/${id}`, auth
 export const addProject = (data) => axios.post(`${API_BASE}/projects`, data, authHeaders());
 export const updateProject = (id, data) => axios.put(`${API_BASE}/projects/${id}`, data, authHeaders());
 export const deleteProject = (id) => axios.delete(`${API_BASE}/projects/${id}`, authHeaders());
+
+
+
+// Blogs (CMS actions)
+export const addPost = (data) => axios.post(`${API_BASE}/posts`, data, authHeaders());
+export const updatePost = (id, data) => axios.put(`${API_BASE}/posts/${id}`, data, authHeaders());
+export const deletePost = (id) => axios.delete(`${API_BASE}/posts/${id}`, authHeaders());
 
