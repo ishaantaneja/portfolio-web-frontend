@@ -9,6 +9,9 @@ export default function Nav() {
       <Link to="/blog">Blog</Link>
       <Link to="/skills">Skills</Link>
       <Link to="/contact">Contact</Link>
+      <Link to="/login">Login</Link>
+      
+
     </nav>
   )
 }
