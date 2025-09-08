@@ -12,9 +12,7 @@ export default function Blog() {
     setPosts(data);
   };
 
-  useEffect(() => {
-    loadPosts();
-  }, []);
+  useEffect(() => { loadPosts(); }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -30,51 +28,62 @@ export default function Blog() {
 
   return (
     <section className="p-6 max-w-5xl mx-auto container py-20 px-8">
-      <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">Blog</h2>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
+      >
+        Blog
+      </motion.h2>
 
-      <form onSubmit={onSubmit} className="flex flex-col gap-2 mb-6">
+      <motion.form
+        onSubmit={onSubmit}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col md:flex-row gap-3 mb-8 bg-darkBg/50 backdrop-blur-lg p-4 rounded-xl border border-white/10 shadow-lg"
+      >
         <input
-          className="border p-2 rounded break-words text-black dark:text-white bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
+          className="flex-1 bg-transparent border border-white/20 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           placeholder="Title"
           value={form.title}
-          onChange={e => setForm({ ...form, title: e.target.value })}
+          onChange={(e) => setForm({ ...form, title: e.target.value })}
           required
         />
         <textarea
-          className="border p-2 rounded break-words text-black dark:text-white bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
+          className="flex-1 bg-transparent border border-white/20 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
           placeholder="Content"
           value={form.content}
-          onChange={e => setForm({ ...form, content: e.target.value })}
+          onChange={(e) => setForm({ ...form, content: e.target.value })}
           required
         />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <button className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:scale-105 transition-transform">
           {editing ? "Update" : "Add"}
         </button>
-      </form>
+      </motion.form>
 
       <ul className="space-y-4">
         <AnimatePresence>
-          {posts.map(p => (
+          {posts.map((p) => (
             <motion.li
               key={p._id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="border p-4 rounded flex justify-between items-start gap-2 flex-col md:flex-row border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="p-5 rounded-xl bg-darkBg/60 backdrop-blur-md border border-white/10 shadow-lg flex justify-between items-center gap-4 hover:border-cyan-400/40 transition-colors"
             >
-              <div className="min-w-0">
-                <h3 className="font-semibold break-words text-black dark:text-white">{p.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 break-words">{p.content.slice(0, 300)}...</p>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-bold text-lg text-cyan-400 hover:text-purple-400 transition-colors break-words">{p.title}</h3>
+                <p className="text-gray-300 whitespace-normal break-words">{p.content.slice(0, 300)}...</p>
               </div>
-              <div className="flex gap-2 mt-2 md:mt-0">
+              <div className="flex gap-2 shrink-0">
                 <button
-                  className="bg-yellow-400 px-2 py-1 rounded hover:bg-yellow-500"
+                  className="px-3 py-1 rounded-lg bg-yellow-400/20 border border-yellow-400/40 text-yellow-300 hover:bg-yellow-400/40 transition"
                   onClick={() => onEdit(p)}
                 >
                   ✏️
                 </button>
                 <button
-                  className="bg-red-500 px-2 py-1 rounded hover:bg-red-600"
+                  className="px-3 py-1 rounded-lg bg-red-500/20 border border-red-500/40 text-red-400 hover:bg-red-500/40 transition"
                   onClick={() => onDelete(p._id)}
                 >
                   ❌
@@ -85,5 +94,5 @@ export default function Blog() {
         </AnimatePresence>
       </ul>
     </section>
-  )
+  );
 }

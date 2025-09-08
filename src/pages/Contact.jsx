@@ -18,29 +18,27 @@ export default function Contact() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-20 px-8 container">
+    <section className="max-w-5xl mx-auto py-20 px-8 container">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-extrabold mb-10 text-center text-gray-900 dark:text-gray-100"
+        className="text-3xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center"
       >
         Contact Me
       </motion.h2>
 
       <motion.form
+        onSubmit={onSubmit}
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        onSubmit={onSubmit}
-        className="flex flex-col gap-6 bg-white dark:bg-gray-900 shadow-lg rounded-2xl p-10"
+        className="flex flex-col gap-6 bg-darkBg/50 backdrop-blur-lg shadow-lg rounded-2xl p-10 border border-white/10"
       >
         <input
           required
           placeholder="Your Name"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+          className="p-3 rounded-lg border border-white/20 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
         />
         <input
           required
@@ -48,7 +46,7 @@ export default function Contact() {
           placeholder="Your Email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+          className="p-3 rounded-lg border border-white/20 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
         />
         <textarea
           required
@@ -56,12 +54,12 @@ export default function Contact() {
           placeholder="Your Message"
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+          className="p-3 rounded-lg border border-white/20 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition"
         />
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-indigo-600 text-white py-3 px-6 rounded-lg font-medium shadow-md hover:bg-indigo-700 transition-colors"
+          className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white py-3 px-6 rounded-lg font-medium shadow-md hover:scale-105 transition-transform"
         >
           Send Message
         </motion.button>
@@ -71,7 +69,7 @@ export default function Contact() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-green-500 mt-4 text-center font-medium"
+          className="text-green-400 mt-4 text-center font-medium"
         >
           ✅ Message sent successfully!
         </motion.p>
@@ -80,7 +78,7 @@ export default function Contact() {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-red-500 mt-4 text-center font-medium"
+          className="text-red-400 mt-4 text-center font-medium"
         >
           ❌ Failed to send message. Try again.
         </motion.p>
