@@ -4,7 +4,6 @@ export default function ThemeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // On load, check saved theme
     const saved = localStorage.getItem("theme");
     if (saved === "dark") {
       document.documentElement.classList.add("dark");
@@ -26,7 +25,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+      className="fixed bottom-4 right-4 p-3 rounded-full shadow-lg bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 hover:scale-105 transition-transform"
     >
       {darkMode ? "🌙 Dark" : "☀️ Light"}
     </button>
