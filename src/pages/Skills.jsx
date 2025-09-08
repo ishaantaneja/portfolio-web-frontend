@@ -13,7 +13,7 @@ export default function Skills() {
   const onDelete = async (id) => { await deleteSkill(id); loadSkills(); }
 
   return (
-    <section className="p-6">
+    <section className="p-6 container mx-auto mx-auto py-20 px-8">
       <h2 className="text-2xl font-bold mb-4">Skills</h2>
       <form onSubmit={onAdd} className="flex gap-2 mb-4">
         <input className="border p-2 rounded" placeholder="New skill" value={newSkill} onChange={e=>setNewSkill(e.target.value)} required />

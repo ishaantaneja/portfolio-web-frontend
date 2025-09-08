@@ -9,8 +9,9 @@ export default {
     extend: {
       colors: {
         primary: "#646cff",
-        darkBg: "#121212",
-        lightBg: "#f9f9f9",
+        darkBg: "#121212",      // global dark background
+        lightBg: "#f9f9f9",     // global light background
+        neonCyan: "#00f6ff",    // for neon/glow text
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -19,5 +20,3 @@ export default {
   },
   plugins: [],
 }
-
-

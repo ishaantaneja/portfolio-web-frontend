@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
@@ -14,10 +12,12 @@ import Register from './pages/Register';
 
 export default function App() {
   return (
-    <>
+    // Global wrapper for text & background colors
+    <div className="text-gray-900 dark:text-gray-100 bg-lightBg dark:bg-darkBg min-h-screen transition-colors duration-300">
       <Nav />
       <ThemeToggle />
-      <main style={{ padding: 20 }}>
+
+      <main className="container mx-auto px-6 py-8">
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -28,8 +28,6 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-    </>
+    </div>
   )
 }
-
-

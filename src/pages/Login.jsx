@@ -19,7 +19,7 @@ export default function Login() {
   };
 
   return (
-    <section>
+    <section className = "container mx-auto py-20 px-8">
       <h2>Admin Login</h2>
       <form onSubmit={onSubmit}>
         <input type="email" placeholder="Email" value={email}

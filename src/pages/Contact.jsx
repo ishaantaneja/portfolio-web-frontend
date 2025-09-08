@@ -18,7 +18,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-20 px-8">
+    <section className="max-w-6xl mx-auto py-20 px-8 container">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
