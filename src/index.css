@@ -18,9 +18,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  display: flex;
+  display: flex; 
   flex-direction: column;
-  place-items: center;
+  /*place-items: center; */
   background-color: #ffffff;
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
