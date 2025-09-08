@@ -65,7 +65,7 @@ export default function Home() {
 
       {/* Experience Section */}
       <section className="px-6 py-12 relative">
-        <h2 className="text-3xl font-bold mb-8 text-center">Experience</h2>
+        <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Experience</h2>
 
         <div className="flex flex-col relative" ref={containerRef}>
           {/* Timeline Line */}
@@ -129,59 +129,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Certifications Section */}
+      <section className="px-6 py-12 relative bg-darkBg">
+        <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Certifications</h2>
 
-
-{/* Certifications Section */}
-<section className="px-6 py-12 relative bg-darkBg">
-  <h2 className="text-3xl font-bold mb-8 text-center">Certifications</h2>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {[
-      {
-        title: "React Developer",
-        organization: "Meta",
-        description: "Completed in-depth React course, covering hooks, state management, and performance optimization.",
-      },
-      {
-        title: "Full-Stack Web Development",
-        organization: "Coursera",
-        description: "Built full-stack projects with Node.js, Express, React, and MongoDB following secure coding practices.",
-      },
-      {
-        title: "AWS Cloud Practitioner",
-        organization: "Amazon",
-        description: "Gained foundational knowledge of AWS services, cloud architecture, and security best practices.",
-      },
-      {
-        title: "Python Security Automation",
-        organization: "Udemy",
-        description: "Automated security testing using Python scripts and learned secure development workflows.",
-      },
-      {
-        title: "Python Security Automation",
-        organization: "Udemy",
-        description: "Automated security testing using Python scripts and learned secure development workflows.",
-      },
-      {
-        title: "JavaScript Algorithms & Data Structures",
-        organization: "freeCodeCamp",
-        description: "Mastered algorithms and data structures in JS with practical implementations.",
-      },
-    ].map((cert, index) => (
-      <motion.div
-        key={index}
-        className="bg-darkCard text-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
-        whileHover={{ scale: 1.05 }}
-      >
-        <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-        <p className="text-sm mb-4 text-gray-300">{cert.organization}</p>
-        <p className="text-gray-200 text-sm">{cert.description}</p>
-      </motion.div>
-    ))}
-  </div>
-</section>
-
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: "React Developer",
+              organization: "Meta",
+              description: "Completed in-depth React course, covering hooks, state management, and performance optimization.",
+            },
+            {
+              title: "Full-Stack Web Development",
+              organization: "Coursera",
+              description: "Built full-stack projects with Node.js, Express, React, and MongoDB following secure coding practices.",
+            },
+            {
+              title: "AWS Cloud Practitioner",
+              organization: "Amazon",
+              description: "Gained foundational knowledge of AWS services, cloud architecture, and security best practices.",
+            },
+            {
+              title: "Python Security Automation",
+              organization: "Udemy",
+              description: "Automated security testing using Python scripts and learned secure development workflows.",
+            },
+            {
+              title: "Python Security Automation",
+              organization: "Udemy",
+              description: "Automated security testing using Python scripts and learned secure development workflows.",
+            },
+            {
+              title: "JavaScript Algorithms & Data Structures",
+              organization: "freeCodeCamp",
+              description: "Mastered algorithms and data structures in JS with practical implementations.",
+            },
+          ].map((cert, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 cursor-pointer transition-transform duration-300 w-full"
+            >
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">{cert.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-300">{cert.organization}</p>
+              <p className="mt-2 text-gray-700 dark:text-gray-200">{cert.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
