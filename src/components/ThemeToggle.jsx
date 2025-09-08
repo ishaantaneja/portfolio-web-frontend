@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { getTheme, updateTheme } from "../services/api";
 
 export default function ThemeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const fetchTheme = async () => {
-      try {
-        const { data } = await getTheme();
-        setDarkMode(data.darkMode);
-        document.body.className = data.darkMode ? "dark" : "light";
-      } catch (err) {
-        console.error("Failed to fetch theme", err);
-      }
-    };
-    fetchTheme();
+    // On load, check saved theme
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") {
+      document.documentElement.classList.add("dark");
+      setDarkMode(true);
+    }
   }, []);
 
-  const toggleTheme = async () => {
-    try {
-      const newTheme = !darkMode;
-      await updateTheme(newTheme);
-      setDarkMode(newTheme);
-      document.body.className = newTheme ? "dark" : "light";
-    } catch (err) {
-      console.error("Failed to update theme", err);
+  const toggleTheme = () => {
+    if (darkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
+    setDarkMode(!darkMode);
   };
 
   return (
-    <button onClick={toggleTheme} style={{ margin: 12 }}>
-      {darkMode ? "🌙 Dark Mode" : "☀️ Light Mode"}
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+    >
+      {darkMode ? "🌙 Dark" : "☀️ Light"}
     </button>
   );
 }

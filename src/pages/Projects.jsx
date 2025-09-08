@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { fetchProjects, addProject, updateProject, deleteProject } from '../services/api';
+import React, { useEffect, useState } from "react";
+import { fetchProjects, addProject, updateProject, deleteProject } from "../services/api";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
-  const [form, setForm] = useState({ title: '', description: '', link: '' });
+  const [form, setForm] = useState({ title: "", description: "", link: "" });
   const [editing, setEditing] = useState(null);
 
   const loadProjects = async () => {
@@ -11,81 +12,52 @@ export default function Projects() {
       const { data } = await fetchProjects();
       setProjects(data);
     } catch (err) {
-      console.error("Failed to fetch projects", err);
+      console.error(err);
     }
   };
 
-  useEffect(() => {
-    loadProjects();
-  }, []);
+  useEffect(() => { loadProjects(); }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (editing) {
-        await updateProject(editing, form);
-        setEditing(null);
-      } else {
-        await addProject(form);
-      }
-      setForm({ title: '', description: '', link: '' });
+      if (editing) await updateProject(editing, form);
+      else await addProject(form);
+      setForm({ title: "", description: "", link: "" });
+      setEditing(null);
       loadProjects();
-    } catch (err) {
-      console.error("Failed to save project", err);
-    }
+    } catch (err) { console.error(err); }
   };
 
-  const onEdit = (p) => {
-    setEditing(p._id);
-    setForm({ title: p.title, description: p.description, link: p.link });
-  };
-
-  const onDelete = async (id) => {
-    try {
-      await deleteProject(id);
-      loadProjects();
-    } catch (err) {
-      console.error("Failed to delete project", err);
-    }
-  };
+  const onEdit = (p) => setEditing(p._id) || setForm({ title: p.title, description: p.description, link: p.link });
+  const onDelete = async (id) => { await deleteProject(id); loadProjects(); };
 
   return (
-    <section>
-      <h2>Projects</h2>
-
-      <form onSubmit={onSubmit} style={{ marginBottom: 16 }}>
-        <input
-          required
-          placeholder="Title"
-          value={form.title}
-          onChange={e => setForm({ ...form, title: e.target.value })}
-        />
-        <input
-          required
-          placeholder="Description"
-          value={form.description}
-          onChange={e => setForm({ ...form, description: e.target.value })}
-        />
-        <input
-          required
-          placeholder="Link"
-          value={form.link}
-          onChange={e => setForm({ ...form, link: e.target.value })}
-        />
-        <button type="submit">{editing ? "Update Project" : "Add Project"}</button>
+    <section className="p-6">
+      <h2 className="text-2xl font-bold mb-4">Projects</h2>
+      
+      <form onSubmit={onSubmit} className="flex flex-col md:flex-row gap-2 mb-6">
+        <input className="border p-2 rounded" placeholder="Title" value={form.title} onChange={e => setForm({...form, title: e.target.value})} required />
+        <input className="border p-2 rounded" placeholder="Description" value={form.description} onChange={e => setForm({...form, description: e.target.value})} required />
+        <input className="border p-2 rounded" placeholder="Link" value={form.link} onChange={e => setForm({...form, link: e.target.value})} required />
+        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">{editing ? "Update" : "Add"}</button>
       </form>
 
-      {projects.length === 0 && <p>No projects yet — CMS will populate this.</p>}
-
-      <ul>
-        {projects.map(p => (
-          <li key={p._id}>
-            <a href={p.link} target="_blank" rel="noreferrer">{p.title}</a>
-            <p>{p.description}</p>
-            <button onClick={() => onEdit(p)}>✏️ Edit</button>
-            <button onClick={() => onDelete(p._id)}>❌ Delete</button>
-          </li>
-        ))}
+      <ul className="space-y-4">
+        <AnimatePresence>
+          {projects.map(p => (
+            <motion.li key={p._id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y:0 }} exit={{ opacity: 0, y: -10 }} className="p-4 border rounded flex justify-between items-center">
+              <div>
+                <a href={p.link} target="_blank" className="font-semibold text-blue-600">{p.title}</a>
+                <p className="text-gray-600">{p.description}</p>
+              </div>
+              <div className="flex gap-2">
+                <button className="bg-yellow-400 px-2 py-1 rounded hover:bg-yellow-500" onClick={()=>onEdit(p)}>✏️</button>
+                <button className="bg-red-500 px-2 py-1 rounded hover:bg-red-600" onClick={()=>onDelete(p._id)}>❌</button>
+              </div>
+            </motion.li>
+          ))}
+        </AnimatePresence>
       </ul>
     </section>
   );
