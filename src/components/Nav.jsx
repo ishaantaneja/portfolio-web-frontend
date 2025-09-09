@@ -7,6 +7,7 @@ export default function Nav() {
   const navItems = ["Home", "Projects", "Blog", "Skills", "Contact", "Login"];
 
   return (
+    
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-500/80 dark:bg-gray-700/80 shadow-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo / Name */}

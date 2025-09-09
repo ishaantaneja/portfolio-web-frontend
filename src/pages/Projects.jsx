@@ -48,11 +48,11 @@ export default function Projects() {
   };
 
   return (
-    <section className="p-6 max-w-5xl mx-auto container py-20 px-8">
+    <section className="p-6 max-w-6xl mx-auto container py-20 px-8">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient-x"
+        className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient-x text-center"
       >
         Projects
       </motion.h2>
@@ -62,7 +62,7 @@ export default function Projects() {
         onSubmit={onSubmit}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col md:flex-row gap-3 mb-8 bg-darkBg/50 backdrop-blur-lg p-4 rounded-xl border border-white/10 shadow-lg"
+        className="flex flex-col md:flex-row gap-3 mb-12 bg-darkBg/50 backdrop-blur-lg p-4 rounded-xl border border-white/10 shadow-lg"
       >
         <input
           className="flex-1 bg-transparent border border-white/20 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
@@ -90,18 +90,19 @@ export default function Projects() {
         </button>
       </motion.form>
 
-      {/* Projects List */}
-      <ul className="space-y-4">
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <AnimatePresence>
           {projects.map((p) => (
-            <motion.li
+            <motion.div
               key={p._id}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="p-5 rounded-xl bg-darkBg/60 backdrop-blur-md border border-white/10 shadow-lg flex justify-between items-center gap-4 hover:border-cyan-400/40 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 cursor-pointer transition-transform duration-300 w-full flex flex-col justify-between"
             >
-              <div className="min-w-0 flex-1">
+              <div className="flex-1 min-w-0">
                 <a
                   href={p.link}
                   target="_blank"
@@ -110,11 +111,12 @@ export default function Projects() {
                 >
                   {p.title}
                 </a>
-                <p className="text-gray-300 whitespace-normal break-words">
+                <p className="mt-2 text-gray-700 dark:text-gray-200 break-words">
                   {p.description}
                 </p>
               </div>
-              <div className="flex gap-2 shrink-0">
+
+              <div className="flex gap-2 mt-4">
                 <button
                   className="px-3 py-1 rounded-lg bg-yellow-400/20 border border-yellow-400/40 text-yellow-300 hover:bg-yellow-400/40 transition"
                   onClick={() => onEdit(p)}
@@ -128,10 +130,10 @@ export default function Projects() {
                   ❌
                 </button>
               </div>
-            </motion.li>
+            </motion.div>
           ))}
         </AnimatePresence>
-      </ul>
+      </div>
     </section>
   );
 }

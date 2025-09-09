@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <div className="bg-darkBg text-white min-h-screen">
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center text-center min-h-screen px-4 pt-24">
+      <section className="flex flex-col justify-center items-center text-center min-h-screen px-4 pt-1">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
