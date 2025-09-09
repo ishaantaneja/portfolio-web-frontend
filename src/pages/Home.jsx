@@ -51,16 +51,29 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="text-5xl font-bold mb-4"
         >
-          Ishaan Taneja
+          Building Secure, Scalable & Smart Web Experiences
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className="text-xl max-w-xl"
-        >
-          Full-Stack Web Developer specializing in secure, high-performance web apps with AI-driven workflow optimization.
-        </motion.p>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1.5 }}
+  className="text-xl max-w leading-relaxed mt-5"
+>
+  Welcome to my Portfolio👋 — I began my journey with a B.Tech. in Computer Science and Engineering, complemented by a Minor in Big Data Analytics. During my time at university, I became actively involved with the Manipal Information Security Team, where I grew from a curious learner into a Board Member, shaping initiatives around cybersecurity.
+
+While still pursuing my degree, I took on the role of Teacher Assistant at Coding Ninjas, where I taught Data Structures, Algorithms, and Data Analysis to aspiring developers. Teaching turned out to be a deeply fulfilling experience—it not only sharpened my own concepts but also gave me the joy of mentoring others.
+
+After graduation, I stepped into the industry as a Backend Developer at Bank of America, where I got hands-on exposure to enterprise-level software development. Building on that foundation, I further expanded my skill set by joining the Google Cloud Cohort, strengthening my expertise in cloud technologies.
+
+Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I continue to broaden my horizons by contributing to end-to-end application development while keeping my focus on speed, security, and scalability.  
+  <br /><br />
+  And now… you’re looking at my portfolio — not just a website, but a working demo of my full-stack skills.  
+  Built with the MERN Stack (MongoDB, Express, React, Node), it ties together everything I enjoy: designing secure backends, building smooth frontends, and sprinkling in automation that makes life easier.  
+  I’ve also built gaming projects and automation pipelines — because sometimes the best way to learn is to play, and the best way to work is to automate.  
+  <br /><br />
+  Beyond the code, I stay grounded through music, meditation, reading, and living a life of service.  
+  For me, development isn’t just about apps — it’s about harmony: between tech and people, between creation and peace.  
+</motion.p>
       </section>
 
       {/* Experience Section */}
@@ -81,24 +94,37 @@ export default function Home() {
           {/* Cards with scroll animations and node sync */}
           {[
             {
-              company: "Company A",
-              role: "Frontend Developer",
-              duration: "Jan 2023 - Present",
-              details:
-                "Built React components, optimized performance, integrated dark mode, and followed secure coding practices.",
+              company: "EazyByts",
+              role: "Full-Stack Developer Intern",
+              duration: "September 2025 - Present",
+              details: "Built a Portfolio Website as the Week 1 Project with integrated CMS using the MERN stack (MongoDB, Express, React, Node.js), featuring JWT authentication, CRUD operations, contact form with email notifications, and responsive UI.",
+                
             },
             {
-              company: "Company B",
-              role: "Backend Developer",
-              duration: "Jun 2022 - Dec 2022",
-              details:
-                "Developed Node.js REST APIs, managed PostgreSQL database, and implemented JWT-based authentication.",
+              company: "Google Cloud Skills Boost",
+              role: "Cloud Developer Trainee",
+              duration: "August 2025 - September 2025",
+              details: "Developed Node.js REST APIs, managed PostgreSQL database, and implemented JWT-based authentication. Deployed serverless web applications using Compute Engine and Cloud Run Functions, integrating with Pub/Sub, Cloud Storage and API Gateway. Earned skill badges validating expertise in cloud-native development, and container orchestration",
             },
             {
-              company: "Company C",
-              role: "Intern",
-              duration: "Jan 2022 - May 2022",
-              details: "Worked on Python scripts for automation, learned software security best practices.",
+              company: "Bank of America",
+              role: "Sr. Tech. Associate - Backend Developer",
+              duration: "June 2022 - April 2023",
+              details: "Developed and maintained RESTful APIs using Python (FastAPI) to support banking operations while designing and managing sql queries and procedures using Toad for SQL to write, test and optimize those queries, ensuring high reliability across datasets exceeding 1M+ records and bring response time down by 20%. Collaborated with Innovation Team to build a virtual banking environment prototype in Unreal Engine, driving innovation and influencing future digital banking experiences for which I received Global Recognition. Authored clear and reusable technical documentation and API specifications, enabling faster onboarding of new developers and improving knowledge transfer efficiency.",
+              isLast: true,
+            },
+            {
+              company: "Coding Ninjas",
+              role: "Teaching Assistant",
+              duration: "September 2021 - January 2022",
+              details: "Assisted 200+ learners in mastering Data Structures & Algorithms (DSA) with Python and SQL, maintaining an average learner rating of 4.7/5. Conducted doubt resolution sessions, debugged student code, and provided optimized solutions for algorithmic and sql query problems.",
+              isLast: true,
+            },
+            {
+              company: "Manipal Information Security Team",
+              role: "Board Member",
+              duration: "June 2020 - April 2021",
+              details: "Grew from a curious Club Member into a Board Member, shaping initiatives around cybersecurity",
               isLast: true,
             },
           ].map((exp, index) => (
