@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchPosts, addPost, updatePost, deletePost } from "../services/api";
 import { motion, AnimatePresence } from "framer-motion";
+import dayjs from "dayjs";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -73,7 +74,8 @@ export default function Blog() {
             >
               <div className="min-w-0 flex-1">
                 <h3 className="font-bold text-lg text-cyan-400 hover:text-purple-400 transition-colors break-words">{p.title}</h3>
-                <p className="text-gray-300 whitespace-normal break-words">{p.content.slice(0, 300)}...</p>
+                <p className="text-gray-300 whitespace-pre-line break-words">{p.content}...</p>
+                <span className="text-sm text-gray-500 mt-2 block">{dayjs(p.createdAt).format("MMMM D, YYYY")}</span>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button
