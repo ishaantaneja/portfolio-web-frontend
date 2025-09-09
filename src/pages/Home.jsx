@@ -162,34 +162,34 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: "React Developer",
-              organization: "Meta",
-              description: "Completed in-depth React course, covering hooks, state management, and performance optimization.",
+              title: "Cloud Development with GCP",
+              organization: "Google Cloud Skills Boost",
+              description: "Integrating Pub/Sub, Cloud Storage, Compute Machines and API Gateway to build and deploy serverless web applications on Google Cloud Platform using Docker Containers.",
             },
             {
-              title: "Full-Stack Web Development",
-              organization: "Coursera",
-              description: "Built full-stack projects with Node.js, Express, React, and MongoDB following secure coding practices.",
+              title: "Linux Unhatched",
+              organization: "Cisco",
+              description: "Developed foundational Linux skills, including command-line proficiency, file system navigation, and scripting.",
             },
             {
-              title: "AWS Cloud Practitioner",
-              organization: "Amazon",
-              description: "Gained foundational knowledge of AWS services, cloud architecture, and security best practices.",
+              title: "User Experience Design",
+              organization: "Google",
+              description: "Gained knowledge of UX design principles, user research, and prototyping along with hands-on experience using Figma.",
             },
             {
-              title: "Python Security Automation",
-              organization: "Udemy",
-              description: "Automated security testing using Python scripts and learned secure development workflows.",
+              title: "Python for AI and Development",
+              organization: "IBM",
+              description: "Developed skills in Python programming, machine learning, and AI workflow optimization.",
             },
             {
-              title: "Python Security Automation",
-              organization: "Udemy",
-              description: "Automated security testing using Python scripts and learned secure development workflows.",
+              title: "Big Data Analytics",
+              organization: "University of California, San Diego",
+              description: "Big data concepts, tools, and techniques for analyzing large datasets effectively.",
             },
             {
-              title: "JavaScript Algorithms & Data Structures",
-              organization: "freeCodeCamp",
-              description: "Mastered algorithms and data structures in JS with practical implementations.",
+              title: "Cyberops Infosec Expert [CO-ISE]",
+              organization: "Cyberops Infosec LLP",
+              description: "Cybersecurity principles, threat analysis, and defense mechanisms.",
             },
           ].map((cert, index) => (
             <motion.div
