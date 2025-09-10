@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "https://portfolio-web-backend-02i8.onrender.com/"; // backend running locally
+const API_BASE = "https://portfolio-web-backend-02i8.onrender.com"; // backend running on render.com
 
 // Projects - only fetching is public
 export const fetchProjects = () => axios.get(`${API_BASE}/projects`);
