@@ -42,9 +42,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="  min-h-screen w-full flex flex-col">
+    <div className="  min-h-screen w-full flex flex-col px-2 sm:px-0">
       {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center text-center min-h-screen w-full pt-40">
+      <section className="flex flex-col justify-center items-center text-center min-h-screen w-full pt-40 px-2 sm:px-0">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Home() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 1.5 }}
-  className="text-xl max-w leading-relaxed mt-5 w-full"
+  className="text-xl leading-relaxed mt-5 w-full px-2 sm:px-0"
 >
   Welcome to my Portfolio👋 — I began my journey with a B.Tech. in Computer Science and Engineering, complemented by a Minor in Big Data Analytics. During my time at university, I became actively involved with the Manipal Information Security Team, where I grew from a curious learner into a Board Member, shaping initiatives around cybersecurity.
 
@@ -128,7 +128,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
               isLast: true,
             },
           ].map((exp, index) => (
-            <div key={index} className=" sm:ml-10 timeline-card relative">
+            <div key={index} className="timeline-card relative w-full px-2 sm:px-0 sm:ml-10">
               {/* Node */}
               <motion.div
                 className="absolute left-0 w-4 h-4 rounded-full bg-blue-500 origin-center"

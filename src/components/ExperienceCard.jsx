@@ -13,7 +13,7 @@ export default function ExperienceCard({ company, role, duration, details, isLas
       {/* Card */}
       <motion.div
         whileHover={{ scale: 1.01 }}
-        className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 ml-6 mb-6 cursor-pointer transition-transform duration-300 w-full "
+        className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-3 sm:p-6 ml-3 sm:ml-6 mb-6 cursor-pointer transition-transform duration-300 w-full "
       >
         <h3 className="text-xl font-bold text-gray-900 dark:text-white">{company}</h3>
         <p className="text-sm text-gray-500 dark:text-gray-300">{role} | {duration}</p>
