@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import ExperienceCard from "../components/ExperienceCard"; // Make sure path is correct
+import OrientationNudge from "../components/OrientationNudge";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -43,6 +44,7 @@ export default function Home() {
 
   return (
     <div className="  min-h-screen w-full flex flex-col px-2 sm:px-0">
+      <OrientationNudge />
       {/* Hero Section */}
       <section className="flex flex-col justify-center items-center text-center min-h-screen w-full pt-40 px-2 sm:px-0">
         <motion.h1
