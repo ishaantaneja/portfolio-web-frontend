@@ -28,7 +28,7 @@ export default function Blog() {
   const onDelete = async (id) => { await deletePost(id); loadPosts(); }
 
   return (
-    <section className="p-6 max-w-5xl mx-auto container py-20 px-8">
+    <section className="p-6 max-w-5xl mx-auto container py-20 ">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

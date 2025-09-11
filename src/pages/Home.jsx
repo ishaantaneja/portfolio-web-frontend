@@ -128,7 +128,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
               isLast: true,
             },
           ].map((exp, index) => (
-            <div key={index} className="ml-10 timeline-card relative">
+            <div key={index} className=" sm:ml-10 timeline-card relative">
               {/* Node */}
               <motion.div
                 className="absolute left-0 w-4 h-4 rounded-full bg-blue-500 origin-center"
@@ -195,7 +195,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
             <motion.div
               key={index}
               whileHover={{ scale: 1.05 }}
-              className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 cursor-pointer transition-transform duration-300 w-full"
+              className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-1.5 sm:p-6 cursor-pointer transition-transform duration-300 w-full"
             >
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{cert.title}</h3>
               <p className="text-sm text-gray-500 dark:text-gray-300">{cert.organization}</p>
