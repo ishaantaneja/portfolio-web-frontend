@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import ExperienceCard from "../components/ExperienceCard"; // Make sure path is correct
 import OrientationNudge from "../components/OrientationNudge";
+import HomeIntro from "../components/HomeIntro";
+import HomeIntro2 from "../components/HomeIntro2";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -43,50 +45,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="  min-h-screen w-full flex flex-col px-2 sm:px-0">
+    <div className=" w-full flex flex-col px-2 sm:px-0">
       <OrientationNudge />
-      {/* Hero Section */}
-      <section className="flex flex-col justify-center items-center text-center min-h-screen w-full pt-40 px-2 sm:px-0">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-5xl font-bold mb-4"
-        >
-          Building Secure, Scalable & Smart Web Experiences
-        </motion.h1>
-        <motion.p
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1.5 }}
-  className="text-xl leading-relaxed mt-5 w-full px-2 sm:px-0"
->
-  Welcome to my Portfolio👋 — I began my journey with a B.Tech. in Computer Science and Engineering, complemented by a Minor in Big Data Analytics. During my time at university, I became actively involved with the Manipal Information Security Team, where I grew from a curious learner into a Board Member, shaping initiatives around cybersecurity.
-
-While still pursuing my degree, I took on the role of Teacher Assistant at Coding Ninjas, where I taught Data Structures, Algorithms, and Data Analysis to aspiring developers. Teaching turned out to be a deeply fulfilling experience—it not only sharpened my own concepts but also gave me the joy of mentoring others.
-
-After graduation, I stepped into the industry as a Backend Developer at Bank of America, where I got hands-on exposure to enterprise-level software development. Building on that foundation, I further expanded my skill set by joining the Google Cloud Cohort, strengthening my expertise in cloud technologies.
-
-Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I continue to broaden my horizons by contributing to end-to-end application development while keeping my focus on speed, security, and scalability.  
-  <br /><br />
-  And now… you’re looking at my portfolio — not just a website, but a working demo of my full-stack skills.  
-  Built with the MERN Stack (MongoDB, Express, React, Node), it ties together everything I enjoy: designing secure backends, building smooth frontends, and sprinkling in automation that makes life easier.  
-  I’ve also built gaming projects and automation pipelines — because sometimes the best way to learn is to play, and the best way to work is to automate.  
-  <br /><br />
-  Beyond the code, I stay grounded through music, meditation, reading, and living a life of service.  
-  For me, development isn’t just about apps — it’s about harmony: between tech and people, between creation and peace.  
-</motion.p>
+      <section className="flex flex-col justify-center items-center text-center w-full pt-14 px-2 sm:px-0">
+        <HomeIntro2 />
       </section>
 
       {/* Experience Section */}
       <section className=" py-12 relative">
-        <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Experience</h2>
+        <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Experience in Detail</h2>
 
         <div className="flex flex-col relative" ref={containerRef}>
           {/* Timeline Line */}
           <motion.div
             ref={lineRef}
-            className="absolute left-4 top-0 w-1 bg-blue-500 origin-top"
+            className="absolute left-5 top-0 w-1 bg-blue-500 origin-top"
             style={{ height: 0 }}
             initial={{ height: 0 }}
             animate={{ height: Math.min(scrollY, lineHeight) }}
@@ -130,7 +103,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
               isLast: true,
             },
           ].map((exp, index) => (
-            <div key={index} className="timeline-card relative w-full px-2 sm:px-0 sm:ml-10">
+            <div key={index} className="timeline-card relative w-full px-4 sm:px-0.5">
               {/* Node */}
               <motion.div
                 className="absolute left-0 w-4 h-4 rounded-full bg-blue-500 origin-center"
