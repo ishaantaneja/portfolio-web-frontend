@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = import.meta.env.VITE_API_URL; // backend running on render.com
+const API_BASE = import.meta.env.VITE_API_URL || "https://localhost:5000/api"; // backend running on render.com
 
 // Projects - only fetching is public
 export const fetchProjects = () => axios.get(`${API_BASE}/projects`);

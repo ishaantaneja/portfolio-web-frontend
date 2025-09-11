@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import TypeWriter from "typewriter-effect";
+
 import {
   fetchProjects,
   addProject,
@@ -56,6 +58,15 @@ export default function Projects() {
       >
         Projects
       </motion.h2>
+
+       <TypeWriter
+      options={{
+        strings: ["If you won't read this you won't be able to see my Projects. While humanity has worked so long to come this far to see the manifestation of the rigid congruency of the Ultimate Reality with the star-shaped human body being stretched out in the entire cosmos to feel the very same all-pervading Ultimate Reality, a little is known about the People who made this happen. Now that's a cycle of knowing to unknowing and unknowing to knowing. The meaning of which is understood from the heart and not the brain. However, to feel the power of the heart, the power of the brain or rather, the faculties of decision-making abilities have to be utilized to construct logic - for an instance, my Projects. These would serve as a genesis of my decision making abilities bestowed upon me by the Ultimate Reality. Go, have a look at my Projects if you haven't already. Do remember, Love isn't just in the air - it's in the entire Cosmos. It's in my brain. It's in my heart. These Projects are made/being made with LOVE. LOVE YA"],
+        autoStart: true,
+        loop: false,
+        delay: 40,
+      }}
+    />
 
       {/* Form */}
       <motion.form
