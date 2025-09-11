@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="  min-h-screen">
+    <div className="  min-h-screen w-full flex flex-col">
       {/* Hero Section */}
       <section className="flex flex-col justify-center items-center text-center min-h-screen w-full pt-40">
         <motion.h1
@@ -57,7 +57,7 @@ export default function Home() {
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 1.5 }}
-  className="text-xl max-w leading-relaxed mt-5"
+  className="text-xl max-w leading-relaxed mt-5 w-full"
 >
   Welcome to my Portfolio👋 — I began my journey with a B.Tech. in Computer Science and Engineering, complemented by a Minor in Big Data Analytics. During my time at university, I became actively involved with the Manipal Information Security Team, where I grew from a curious learner into a Board Member, shaping initiatives around cybersecurity.
 
@@ -77,7 +77,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
       </section>
 
       {/* Experience Section */}
-      <section className="px-6 py-12 relative">
+      <section className=" py-12 relative">
         <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Experience</h2>
 
         <div className="flex flex-col relative" ref={containerRef}>
@@ -156,7 +156,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
       </section>
 
       {/* Certifications Section */}
-      <section className="px-6 py-12 relative">
+      <section className=" py-12 relative">
         <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Certifications</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
