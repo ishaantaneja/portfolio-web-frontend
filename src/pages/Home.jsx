@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-darkBg text-white min-h-screen">
+    <div className="  min-h-screen">
       {/* Hero Section */}
       <section className="flex flex-col justify-center items-center text-center min-h-screen px-4 pt-40">
         <motion.h1
@@ -156,7 +156,7 @@ Currently, I’m working as a Full-Stack Developer Intern at EazyByts, where I c
       </section>
 
       {/* Certifications Section */}
-      <section className="px-6 py-12 relative bg-darkBg">
+      <section className="px-6 py-12 relative">
         <h2 className="text-3xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 text-center animate-gradient-x">Certifications</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

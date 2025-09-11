@@ -8,12 +8,12 @@ export default function Nav() {
 
   return (
     
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gray-500/80 dark:bg-gray-700/80 shadow-lg border-b border-white/10">
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white-500/80 dark:bg-gray-700/80 shadow-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo / Name */}
         <motion.h1
         initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 0.5 }}
         className="text-2xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient-x"
 >
   Ishaan Taneja
